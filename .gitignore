@@ -6,3 +6,5 @@ pip-selfcheck.json
 pyvenv.cfg
 
 .idea
+
+__pycache__
