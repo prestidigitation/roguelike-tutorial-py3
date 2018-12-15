@@ -1,5 +1,6 @@
 import tcod as libtcod
 from entity import Entity
+from fov_functions import initialize_fov
 from input_handlers import handle_keys
 from map_objects.game_map import GameMap
 from render_functions import clear_all, render_all
@@ -41,6 +42,8 @@ def main():
 
     fov_recompute = True
 
+    fov_map = initialize
+
     key = libtcod.Key()
     mouse = libtcod.Mouse()
 
@@ -62,6 +65,8 @@ def main():
             dx, dy = move
             if not game_map.is_blocked(player.x + dx, player.y + dy):
                 player.move(dx, dy)
+
+                fov_recompute = True
 
         if exit:
             return True
