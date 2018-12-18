@@ -3,4 +3,4 @@ class Fighter:
         self.max_hp = hp
         self.hp = hp
         self.defense = defense
-        self.power power
+        self.power = power
